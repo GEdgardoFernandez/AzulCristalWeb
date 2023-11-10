@@ -18,24 +18,8 @@
   font-family: 'Josefin Sans', sans-serif;
 }
 
-.carousel-caption a {
-  color: #ffffff;
-  font-size: medium;
-  text-shadow:
-    1px 1px 2px black,
-    0 0 1em blue,
-    0 0 0.2em blue;
 
-}
 
-.carousel-caption a:hover {
-  transform: translateY(-3px) scale(2.07);
-  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.4);
-  filter: none;
-  color: rgb(255, 37, 55);
-  text-decoration: none;
-  transition: .2s;
-}
 
 img {
   width: 100%;
@@ -120,7 +104,7 @@ img {
   clip-path: polygon(200px 200px, 450px 0, 450px 344px);
 }
 
-.card {
+.cardsv {
   left: 216px;
   position: absolute;
   top: 300px;
@@ -232,85 +216,81 @@ img {
 }
 
 
-/****CARDS*****/
-
-.mover {
-
-  bottom: 300px;
-  margin: 5px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  position: relative;
-}
+/****CARDS main*****/
 
 .card {
+  width: 190px;
+  height: 254px;
+  border-radius: 20px;
+  background: #f5f5f5;
   position: relative;
-  width: 300px;
-  height: 200px;
-  background-color: #f2f2f2;
-  border-radius: 10px;
-  display: inline-table;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  perspective: 1000px;
-  box-shadow: 0 0 0 5px #ffffff80;
-  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  margin: 10px;
+  padding: 1.8rem;
+  border: 2px solid #c3c6ce;
+  -webkit-transition: 0.5s ease-out;
+  transition: 0.5s ease-out;
+  overflow: visible;
+  margin: 5px;
 }
 
-.card img {
-  width: 100%;
+.card-details {
+  color: rgb(162, 0, 255);
   height: 100%;
-  fill: #333;
-  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  gap: .5em;
+  display: grid;
+  place-content: center;
+  font-family: 'Courier New', Courier, monospace;
 }
 
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+.card a:hover {
+  text-decoration: none;
+  color: #c8b5b3;
 }
-
-.card__content {
+.card-button {
+  text-decoration: none;
+  text-align: center;
+  -webkit-transform: translate(-50%, 125%);
+  -ms-transform: translate(-50%, 125%);
+  transform: translate(-50%, 125%);
+  width: 70%;
+  border-radius: 1rem;
+  border: none;
+  background-color: #6c00f8;
+  color: #fff;
+  font-size: 1rem;
+  padding: .5rem 1rem;
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-  box-sizing: border-box;
-  background-color: #f2f2f2;
-  transform: rotateX(-90deg);
-  transform-origin: bottom;
-  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  left: 50%;
+  bottom: 0;
+  opacity: 0;
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+  cursor: pointer;
+  font-family: 'Courier New', Courier, monospace;
 }
 
-.card:hover .card__content {
-  transform: rotateX(0deg);
+.text-body {
+  color: rgb(134, 134, 134);
 }
 
-.card__title {
-  margin: 0;
-  font-size: 24px;
-  color: #333;
-  font-weight: 700;
+/*Text*/
+.text-title {
+  font-size: 1.5em;
+  font-weight: bold;
 }
 
-.card:hover svg {
-  scale: 0;
+/*Hover*/
+.card:hover {
+  border-color: #6c00f8;
+  -webkit-box-shadow: 10px 5px 18px 0 rgba(255, 255, 255, 0.877);
+  box-shadow: 10px 5px 18px 0 rgba(255, 255, 255, 0.877);
 }
 
-.card__description {
-  margin: 10px 0 0;
-  font-size: 14px;
-  color: #777;
-  line-height: 1.4;
+.card:hover .card-button {
+  -webkit-transform: translate(-50%, 50%);
+  -ms-transform: translate(-50%, 50%);
+  transform: translate(-50%, 50%);
+  opacity: 1;
 }
-
-
 
 
 /****FOOTER****/
@@ -465,8 +445,18 @@ img {
 }
 
 
-/****Cards de las Ofertas******/
+/****Pagina cursos******/
 
+.mainCursos {
+
+}
+.h2cursos {
+  justify-content: center;
+  text-align: center;
+  height: auto;
+  align-items: center;
+  color: #9d7c5b;
+}
 .cardoff {
   position: relative;
   width: 190px;
@@ -476,9 +466,10 @@ img {
   box-shadow: -5px 5px #333;
   transition: all .2s ease-in-out;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   cursor: pointer;
-  margin: 10px;
+  margin: 25px;
 }
 
 .cardoff:hover {
